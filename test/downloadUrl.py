@@ -1,3 +1,4 @@
+
 import urllib.request
 
 # 下载网页，并设置重试次数
@@ -15,9 +16,10 @@ def download(url, num_retries=2):
                 i += 1
                 return download(url, num_retries-1)
         else:
-            return 'Download have faild!!!'
+            return 'Download has faild!!!'
     return html
 
-# if __name__ == '__main__':
-#     html = download("http://www.meetup.com")
-#     print(bytes.decode(html))
+if __name__ == '__main__':
+    html = download("https://search.bilibili.com/all?keyword=stock")
+    # html = download("https://www.baidu.com")
+    print(html.decode('UTF-8'))
